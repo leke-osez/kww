@@ -1,5 +1,4 @@
 import React, { useContext, createContext, useState, useEffect } from "react";
-import { toast } from "react-hot-toast";
 
 const Context = createContext();
 
@@ -10,10 +9,10 @@ export const StateContext = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const [totalQuantity, setTotalQuantity] = useState(0);
+  const [qty, setQty] = useState(1);
 
   const onAdd = (product, quantity) => {
-    const checkCart = cartItems.find(
-      (cartItem) => cartItem._id === product._id
+    const checkCart = cartItems.find((cartItem) => cartItem._id === product._id
     );
 
     if (checkCart) {
@@ -33,7 +32,6 @@ export const StateContext = ({ children }) => {
       setCartItems([...cartItems, product]);
     }
     setTotalQuantity((prevQty) => prevQty + quantity);
-    toast.success(`${qty} ${product.name} added to cart.`);
   };
 
   const toggleCartQuantity = (id, value) => {
@@ -75,16 +73,19 @@ export const StateContext = ({ children }) => {
 
   };
   useEffect(()=>{
-    if (localStorage.getItem('cartItems')) setCartItems(localStorage.getItem('cartItems'));
+    
+    if (localStorage.getItem('cartItems')) {setCartItems(JSON.parse(localStorage.getItem('cartItems')));}
     return
   },[])
   useEffect(()=>{
-    localStorage.setItem('cartItems', cartItems);
+    if (cartItems ) localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
   },[cartItems])
   return (
     <Context.Provider
       value={{
+        qty,
+        setQty,
         cartItems,
         setCartItems,
         showCart,
