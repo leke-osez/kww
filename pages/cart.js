@@ -41,24 +41,26 @@ const Cart = () => {
   };
   return (
     <div
-      className=" relative pt-7 h-screen w-full flex items-center justify-center"
+      className=" relative pt-20 h-screen w-full flex justify-center"
       ref={cartRef}
     >
-      <div className="md:w-70% w-full">
-        <button
+      <div className="md:w-70% w-full flex flex-col items-center">
+        <p
           type="button"
-          className="flex justify-start pb-[100px] items-center gap-3"
+          className="flex justify-center pb-4 items-center gap-3"
           // onClick={() => {
           //   setShowCart(false);
           // }}
         >
           {/* <AiOutlineLeft className="text-2xl font-semibold"/> */}
-          <span className="text-xl font-semibold">Your Cart</span>
-          <span className="text-lg font-semibold text-black/60">
+          <span className="text-xl md:text-3xl font-semibold text-center">Your Cart</span>
+          <span className="text-lg md:text-2xl font-semibold text-black/60">
             ({totalQuantity} {totalQuantity > 1 ? "items" : "item"})
           </span>
-        </button>
+        </p>
 
+
+        {/* Empty Cart */}
         {cartItems.length < 1 && (
           <div className="flex  flex-col items-center justify-start space-y-6">
             <AiOutlineShopping size={150} className="text-green-500" />
@@ -78,7 +80,9 @@ const Cart = () => {
             </Link>
           </div>
         )}
-        <div className="w-full space-y-10 overflow-scroll h-[300px]">
+
+        {/* In Cart */}
+        <div className="w-full flex flex-col items-center md:w-[500px] space-y-10 overflow-y-scroll  flex-1">
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
               <div className="flex space-x-2 w-full" key={item._id}>
@@ -116,8 +120,8 @@ const Cart = () => {
         {cartItems.length >= 1 && (
           <div className="py-3">
             <div className="flex justify-start items-center space-x-3 mb-10">
-              <h3 className="text-xl font-bold">Subtotal:</h3>
-              <h3 className="text-xl font-semibold">
+              <h3 className="text-xl md:text-2xl font-semibold">Subtotal:</h3>
+              <h3 className="text-xl md:text-2xl font-semibold">
                 ${money(
                   cartItems.reduce(
                     (total, item) => total + item.quantity * item.price,
@@ -129,7 +133,7 @@ const Cart = () => {
             <div className=" w-[full] flex justify-center items-center">
               <button
                 type="button"
-                className="text-xl text-white bg-purple-900 w-[70%] font-semibold text-center px-3 py-3 flex justify-center items-center"
+                className="text-xl text-white bg-purple-900 font-semibold text-center px-9 py-3 flex justify-center items-center"
                 onClick={handleCheckout}
               >
                 Pay with Stripe

@@ -15,6 +15,7 @@ import QtyAdjust from "../../components/QtyAdjust";
 import { toast } from "react-hot-toast";
 import { RiSliceFill } from "react-icons/ri";
 import { default as money } from "../../lib/moneyString";
+import Link from "next/link";
 
 {
   /* <AiFillStar/>
@@ -134,20 +135,9 @@ const ProductDetails = ({ item, products }) => {
         <h2 className=" text-black/70 text-lg xl:text-2xl md:font-semibold mt-3 mb-2">
           More like this{""}
         </h2>
-        <div className="gap-4 flex p-4 flex-row items-center h-full overflow-y-fixed overflow-x-auto md:w-[80%] xl:w-[60%] w-full">
-          {products?.slice(2, 7).map((item, i) => (
-            <div className=" w-[400px] md:h-[300px] md:w-[300px] variety__product bg-slate-600 " key={item._id}>
-              <Image
-                className={
-                  i == index ? "small-image selected-image" : "small-image"
-                }
-                src={item.product}
-                alt={item.name}
-                width={"100%"}
-                height={"100%"}
-                layout= "fixed"
-              />
-            </div>
+        <div className="gap-4 flex p-4 flex-row items-center overflow-x-auto md:max-w-[90%] xl:w-[90%] w-full">
+          {products?.slice(0, 7).map((item, i) => (
+            <Product key = {item._id} Link = {Link} Image = {Image} SlashedPrice = {SlashedPrice} item = {item} money = {money}/>
           ))}
         </div>
       </div>

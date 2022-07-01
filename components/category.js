@@ -18,9 +18,9 @@ const Category = ({products, title}) => {
             <hr className='absolute left-0 right-0 bottom-0 top-0 m-auto  border-black/20'/>
             <p className='text-center relative h-auto w-auto m-0 leading-none px-3 bg-inherit text-xl font-semibold text-black/70 capitalize'>{title}</p>
         </div>
-        <div className='absolute top-0 right-0 bottom-0 m-auto h-fit p-4 bg-slate-400/60 z-[4]'>
+        {/* <div className='absolute top-0 right-0 bottom-0 m-auto h-fit p-4 bg-slate-400/60 z-[4]'>
             <div className='h-full flex items-center justify-center '><p className='text-white'>Check {`${title} section`}</p><AiOutlineRight className='text-2xl text-white text-center'/></div>
-        </div>
+        </div> */}
         {/* Products */}
         <div className='gap-2 md:gap-5 flex overflow-y-auto '>
             

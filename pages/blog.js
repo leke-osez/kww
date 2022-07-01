@@ -19,9 +19,9 @@ const blog = () => {
           <p className="text-start w-full md:text-2xl text-xl font-normal text-slate-600 mb-2 md:mb-4">
             Top Reads
           </p>
-          <div className="grid w-full md:w-[95%] md:grid-cols-4 grid-cols-2 md:grid-rows-2 grid-rows-4 md:mt-6 md:h-[500px] h-[400px] md:items-start gap-2 ">
+          <div className="grid w-full md:w-[95%] sm:grid-cols-4 sm:grid-rows-2 grid-cols-2  grid-rows-4 md:mt-6 md:h-fit h-fit md:items-start gap-2 ">
             {/* Big  card */}
-            <div className="flex-2 w-full md:h-full  col-span-2 row-span-2 mt-5 md:mt-0">
+            <div className="flex-2 aspect-square  col-span-2 row-span-2 ">
               <BlogCard
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"
@@ -29,26 +29,26 @@ const blog = () => {
             </div>
 
             {/* Small cards*/}
-            <div className="h-full w-full flex items-center justify-center ">
+            <div className="md:w-full aspect-square ">
               <BlogCard
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"
               />
             </div>
-            <div className="h-full w-full flex items-center justify-center ">
+            <div className=" w-full aspect-square">
               <BlogCard
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"
               />
             </div>
 
-            <div className="h-full flex-1 w-full  flex items-center justify-center ">
+            <div className=" w-full  aspect-square">
               <BlogCard
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"
               />
             </div>
-            <div className="h-full flex-1 w-full  flex items-center justify-center ">
+            <div className=" w-full  aspect-square">
               <BlogCard
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"
@@ -68,32 +68,32 @@ const blog = () => {
           <p className="text-start relative md:text-2xl text-lg font-normal text-slate-600 mb-4">
             Content for Kings
           </p>
-          <div className="w-full md:h-[200px] h-[300px] relative grid md:grid-cols-5 grid-cols-3 gap-3">
-            <div className="h-full flex-1 w-full  flex items-center justify-center ">
+          <div className="w-full md:h-[200px] h-[300px] relative grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-3">
+            <div className="w-full  flex items-center justify-center aspect-square">
               <BlogCard
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"
               />
             </div>
-            <div className="h-full flex-1 w-full  flex items-center justify-center ">
+            <div className=" w-full  flex items-center justify-center aspect-square">
               <BlogCard
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"
               />
             </div>
-            <div className="h-full flex-1 w-full  flex items-center justify-center ">
+            <div className=" w-full  flex items-center justify-center aspect-square">
               <BlogCard
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"
               />
             </div>
-            <div className="h-full flex-1 w-full  flex items-center justify-center ">
+            <div className=" w-full  flex items-center justify-center aspect-square">
               <BlogCard
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"
               />
             </div>
-            <div className="h-full flex-1 w-full  flex items-center justify-center ">
+            <div className=" w-full  flex items-center justify-center aspect-square">
               <BlogCard
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"

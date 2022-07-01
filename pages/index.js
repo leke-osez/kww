@@ -5,6 +5,7 @@ import { products as categories } from "../lib/dummy";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import BlogCard from "../components/blogCard";
 import WhiteShirt from "../public/dummyProducts/tshirtwhite.png";
+import Link from 'next/link'
 
 
 export default function Home() {
@@ -78,25 +79,35 @@ export default function Home() {
         </div>
       </div>
 
+      <Link href = '/products'>
+            <div className="w-full flex justify-center mt-4">
 
+            <p
+                className = ' cursor-pointer border-black border-2 py-2 px-3 md:py-3 md:px-8 text-black text-lg md:text-xl font-semibold text-center w-fit '
+            >
+                SHOP NOW
+            </p>
+            </div>
+      </Link>
       {/* Blog Show */}
       <div className="px-4 md:mt-9 mt-6 w-full flex flex-col items-center">
-        <h1 className="w-full text-start md:mb-3 md:text-xl text-base font-medium">See blog Certified Hair Tips</h1>
-          <div className="grid grid-cols-1 grid-row-1 overflow-hidden md:grid-cols-3 w-full h-[300px] gap-3">
-              <div className="w-full">
+        <h1 className="w-full text-start md:mb-3 md:text-xl text-base font-medium">Read Blog</h1>
+          <div className="grid grid-cols-2 grid-row-1 overflow-hidden sm:grid-cols-3 xl:grid-cols-6 w-full h-fit gap-3">
+             
+              <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
 
               <BlogCard
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"
               />
               </div>
-              <div className="w-full">
+              <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
 
               <BlogCard
               imageUrl={WhiteShirt}
               description="Start your wave journey"/>
               </div>
-              <div className="w-full">
+              <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
 
               <BlogCard
               imageUrl={WhiteShirt}
