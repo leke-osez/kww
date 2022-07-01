@@ -8,13 +8,15 @@ export const StateContext = ({ children }) => {
 
   const [cartItems, setCartItems] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [qty, setQty] = useState(1);
 
-  const onAdd = (product, quantity) => {
+  const onAdd = (items, quant) => {
+    const quantity = parseInt(quant)
+    const product = {...items}
     const checkCart = cartItems.find((cartItem) => cartItem._id === product._id
     );
-
     if (checkCart) {
       setCartItems(
         cartItems.map((cartItem) => {
@@ -24,14 +26,19 @@ export const StateContext = ({ children }) => {
               quantity: cartItem.quantity + quantity,
             };
           }
+          else return cartItem
         })
       );
     } else {
       product.quantity = quantity;
-
+      if (product.discount) {
+        product.price = product.price - (0.01 * product.discount * product.price)
+      }
       setCartItems([...cartItems, product]);
     }
     setTotalQuantity((prevQty) => prevQty + quantity);
+    console.log(cartItems)
+
   };
 
   const toggleCartQuantity = (id, value) => {
@@ -45,9 +52,11 @@ export const StateContext = ({ children }) => {
           if (item._id === id) {
             return { ...item, quantity: item.quantity + 1 };
           }
-          return item;
+          return {...item};
         })
         );
+        setTotalQuantity((prevTotalQuantity) => prevTotalQuantity + 1);
+
     } else if (value === "dec") {
       //decrease item on cart
       if (foundProduct.quantity > 1) {
@@ -56,10 +65,11 @@ export const StateContext = ({ children }) => {
             if (item._id === id) {
               return { ...item, quantity: item.quantity - 1 };
             }
-            return item;
+            return {...item};
           })
         );
         setTotalQuantity((prevTotalQuantity) => prevTotalQuantity - 1);
+
       } 
 
     }
@@ -70,6 +80,7 @@ export const StateContext = ({ children }) => {
           (prevTotalQuantity) => prevTotalQuantity - foundProduct.quantity
         );
       }
+      console.log(cartItems)
 
   };
   useEffect(()=>{
@@ -94,6 +105,7 @@ export const StateContext = ({ children }) => {
         totalQuantity,
         setTotalQuantity,
         toggleCartQuantity,
+        showMenu,setShowMenu
       }}
     >
       {children}
