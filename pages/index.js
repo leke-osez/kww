@@ -5,8 +5,7 @@ import { products as categories } from "../lib/dummy";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import BlogCard from "../components/blogCard";
 import WhiteShirt from "../public/dummyProducts/tshirtwhite.png";
-import Link from 'next/link'
-
+import Link from "next/link";
 
 export default function Home() {
   // const [pageScroll,setPageScroll ] = useState(2)
@@ -60,7 +59,7 @@ export default function Home() {
         </div>
       </div>
 
-        {/* Products show */}
+      {/* Products show */}
       <div className="flex flex-col md:flex-row gap-3 w-full  relative md:mt-6 mt-3 xl:mt-9">
         <div className="md:border-r-[1px] flex gap-2 relative w-full px-4 py-2 bg-gray-200 h-[280px] xl:h-[500px]">
           <div className="h-[50%] w-[55%] bg-yellow-700/30 p-3"></div>
@@ -70,7 +69,9 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col items-center text-center w-full md:w-[50%]  md:p-4">
-          <h1 className= " text-lg md:text-xl xl:text-2xl font-semibold  p-2 ">Clair students can expect to get </h1>
+          <h1 className=" text-lg md:text-xl xl:text-2xl font-semibold  p-2 ">
+            Clair students can expect to get{" "}
+          </h1>
           <p className="text-base xl:text-xl text-black/60">
             Saints Varsity athletics offers tremendous opportunity to get
             involved in one of 16 sports on campus, from Basketball and Soccer
@@ -79,48 +80,73 @@ export default function Home() {
         </div>
       </div>
 
-      <Link href = '/products'>
-            <div className="w-full flex justify-center mt-4">
-
-            <p
-                className = ' cursor-pointer border-black border-2 py-2 px-3 md:py-3 md:px-8 text-black text-lg md:text-xl font-semibold text-center w-fit '
-            >
-                SHOP NOW
-            </p>
-            </div>
-      </Link>
+      {/* <Link href="/products">
+        <div className="w-full flex justify-center mt-4">
+          <p className=" cursor-pointer border-black border-2 py-2 px-3 md:py-3 md:px-8 text-black text-lg md:text-xl font-semibold text-center w-fit ">
+            SHOP NOW
+          </p>
+        </div>
+      </Link> */}
       {/* Blog Show */}
       <div className="px-4 md:mt-9 mt-6 w-full flex flex-col items-center">
-        <h1 className="w-full text-start md:mb-3 md:text-xl text-base font-medium">Read Blog</h1>
-          <div className="grid grid-cols-2 grid-row-1 overflow-hidden sm:grid-cols-3 xl:grid-cols-6 w-full h-fit gap-3">
-             
-              <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
-
-              <BlogCard
-                imageUrl={WhiteShirt}
-                description="Start your wave journey"
-              />
-              </div>
-              <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
-
-              <BlogCard
-              imageUrl={WhiteShirt}
-              description="Start your wave journey"/>
-              </div>
-              <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
-
-              <BlogCard
+        <h1 className="w-full text-start md:mb-3 md:text-xl text-base font-medium">
+          Read Blog
+        </h1>
+        <div className="grid grid-cols-2 grid-row-1 overflow-hidden sm:grid-cols-3 xl:grid-cols-6 w-full h-fit gap-3 ">
+          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
+            <BlogCard
               imageUrl={WhiteShirt}
               description="Start your wave journey"
-              />
-              </div>
+            />
           </div>
+          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
+            <BlogCard
+              imageUrl={WhiteShirt}
+              description="Start your wave journey"
+            />
+          </div>
+          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
+            <BlogCard
+              imageUrl={WhiteShirt}
+              description="Start your wave journey"
+            />
+          </div>
+          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
+            <BlogCard
+              imageUrl={WhiteShirt}
+              description="Start your wave journey"
+            />
+          </div>
+          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
+            <BlogCard
+              imageUrl={WhiteShirt}
+              description="Start your wave journey"
+            />
+          </div>
+          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
+            <BlogCard
+              imageUrl={WhiteShirt}
+              description="Start your wave journey"
+            />
+          </div>
+        </div>
 
-          {/* scroll dots */}
-          <div>
-              
-          </div>
-      </div> 
+        {/* scroll dots */}
+        <div></div>
+      </div>
+      <div className="w-full flex justify-center">
+
+      <div className="w-full md:w-[80%] bg-teal-500/70 bg-ads min-h-[50px] md:h-fit flex flex-col justify-center items-center md:my-6 md:py-4 py-2 my-3 gap-3">
+        <p className="text-center mb-2 md:text-2xl">
+          Up your wave game by using our trusted products and see reviews
+        </p>
+        <Link href="/products">
+          <button className="md:text-xl md:px-7 md:py-3 px-2 py-1 bg-black text-white rounded-full text-base md:font-semibold">
+            Shop Now
+          </button>
+        </Link>
+      </div>
+      </div>
 
       {/* <div className='bg-inherit px-7 md:px-20'>
         {

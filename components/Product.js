@@ -11,13 +11,18 @@ const Product = ({Link,Image,SlashedPrice,item,money}) => {
                         <p className='bg-white/80 text-black/70 py-3 px-5 font-semibold text-base text-center -mt-28 md:-mt-20'>VIEW</p>
                     </div>
                 </div>
+
+                {/* discount yellow */}
+                {item.discount && <div className='absolute top-1 left-1 aspect-square rounded-full z-[2] min-w-fit p-[2px] flex justify-center items-center bg-yellow-400/80'>
+                  <p className='text-center text-black/60 text-sm'>{item.discount}%</p>
+                </div>}
                 {/* item content */}
-                <div className=' h-[100px] w-[100px]  md:h-[200px] md:w-[200px] xl:h-[400px] xl:w-[400px] relative ' >
+                <div className=' h-[100px] w-[100px]  md:h-[200px] md:w-[200px] xl:h-[200px] xl:w-[200px] relative ' >
                     <Image src={item.product} alt = {item.product} width= '100%' height = '105%' layout='responsive'/>       
                 </div>
 
 
-                <div className='relative mt-4 w-[150px] sm:w-[200px] xl:w-[400px] overflow-hidden '>
+                <div className='relative mt-4 w-[150px] sm:w-[200px] xl:w-[200px] overflow-hidden '>
                     <h2 className='font-semibold md:text-lg uppercase'>{item.name}</h2>
                     <p className='text-black/60 font-base md:font-semibold max-lines w-full'>{item.description}</p>
                     <div className='flex space-x-4 mt-2 items-center'>

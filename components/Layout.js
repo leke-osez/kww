@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       </Head>
       <header className="relative">
         <div >       
-        <div className="fixed top-0 w-full z-10"><Navbar /></div>
+        <div className="fixed top-0 w-full z-[100]"><Navbar /></div>
         </div>
         <div className="relative">
           {showMenu && <SideModal><SideMenu/></SideModal>}

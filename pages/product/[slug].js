@@ -135,7 +135,7 @@ const ProductDetails = ({ item, products }) => {
         <h2 className=" text-black/70 text-lg xl:text-2xl md:font-semibold mt-3 mb-2">
           More like this{""}
         </h2>
-        <div className="gap-4 flex p-4 flex-row items-center overflow-x-auto md:max-w-[90%] xl:w-[90%] w-full">
+        <div className="gap-4 flex p-4 flex-row items-start justify-start overflow-x-auto md:max-w-[90%] xl:w-[90%] w-full">
           {products?.slice(0, 7).map((item, i) => (
             <Product key = {item._id} Link = {Link} Image = {Image} SlashedPrice = {SlashedPrice} item = {item} money = {money}/>
           ))}

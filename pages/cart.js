@@ -46,7 +46,6 @@ const Cart = () => {
     >
       <div className="md:w-70% w-full flex flex-col items-center">
         <p
-          type="button"
           className="flex justify-center pb-4 items-center gap-3"
           // onClick={() => {
           //   setShowCart(false);

@@ -119,3 +119,34 @@ input[type="number"] {
   max-height: 2.8em;
   line-height: 1.4em;
 }
+
+.hover-effect {
+  display: none;
+}
+.drop-products:hover {
+  cursor: pointer;
+}
+.drop-products:hover .hover-effect {
+  display: flex;
+}
+.hover-effect p:hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(134, 134, 134);
+  color: rgb(134, 134, 134);
+  cursor: pointer;
+}
+
+.bg-ads {
+  background: linear-gradient(
+    90deg,
+    rgba(204, 57, 238, 0.7) 0%,
+    rgba(20, 184, 166, 0.7) 100%
+  );
+}
+.line-grad-col {
+  background: linear-gradient(
+    90deg,
+    rgba(204, 57, 238, 0.7) 0%,
+    rgba(20, 184, 166, 0.7) 100%
+  );
+}

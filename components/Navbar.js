@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className='flex justify-between items-center bg-slate-900 px-4 sm:px-5 md:px-24 py-3 md:py-4 relative '>
         <button 
           className=' sm:hidden'
-          onClick = {()=>{setShowMenu(true)}}
+          onClick = {()=>{setShowMenu((prev)=>!prev)}}
         >
           <RiMenu2Line className='text-white text-2xl md:text-3xl '/>
         </button>
@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
 
         {/* nav menu */}
-        <div className='text-white sm:text-base md:text-xl gap-x-7 sm:flex hidden contents-none'>
+        <div className='text-white sm:text-base md:text-lg md:gap-x-7 sm:gap-x-3 sm:flex hidden contents-none'>
             <Link href = '/blog'><p className='hover:underline-offset-1 hover:underline cursor-pointer'>Blog</p></Link>
             <Link href= '/products'><p className='hover:underline-offset-1 hover:underline cursor-pointer'>Products</p></Link>
             <Link href = '/about'><p className='hover:underline-offset-1 hover:underline cursor-pointer'>About Us</p></Link>
