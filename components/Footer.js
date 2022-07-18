@@ -6,7 +6,7 @@ import { GrFacebook } from "react-icons/gr";
 
 const Footer = () => {
   return (
-    <div className='w-full bg-[#031B34] h-fit py-5 mt-10 md:px-20 md:py-10'>
+    <div className='w-full bg-[#031B34] h-fit py-5 mt-10 md:px-10 xl:px-20 md:py-10'>
       {/* Top footer */}
       <div className='flex md:gap-7 gap-x-7 gap-y-7 flex-wrap md:justify-between  text-white py-5 xl:px-40 px-5 md:px-20'>
 
@@ -46,9 +46,9 @@ const Footer = () => {
       <div className="w-full m-auto rounded-full line-grad-col h-[2px] mb-5" />
         {/* Bottom Footer */}
         <div className='w-full flex gap-3 md:gap-5 justify-center'>
-        ` <div className='text-white border-[2px] border-white p-2 rounded-full aspect-square'><AiFillInstagram /></div>
-          <div className="text-white border-[2px] border-white p-2 rounded-full aspect-square"><BsTwitter /></div>
-          <div className="text-white border-[2px] border-white p-2 rounded-full aspect-square"><GrFacebook /></div>
+        ` <div className='text-white border-[2px] border-white p-2 rounded-full aspect-square flex items-center justify-center'><AiFillInstagram /></div>
+          <div className="text-white border-[2px] border-white p-2 rounded-full aspect-square flex items-center justify-center"><BsTwitter /></div>
+          <div className="text-white border-[2px] border-white p-2 rounded-full aspect-square flex items-center justify-center"><GrFacebook /></div>
         </div>
 
       

@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
 
         {/* nav menu */}
-        <div className='text-white sm:text-base md:text-lg md:gap-x-7 sm:gap-x-3 sm:flex hidden contents-none'>
+        <div className='text-white sm:text-base md:text-lg md:mr-5 xl:mr-7 md:gap-x-7 sm:gap-x-3 sm:flex hidden contents-none'>
             <Link href = '/blog'><p className='hover:underline-offset-1 hover:underline cursor-pointer'>Blog</p></Link>
             <Link href= '/products'><p className='hover:underline-offset-1 hover:underline cursor-pointer'>Products</p></Link>
             <Link href = '/about'><p className='hover:underline-offset-1 hover:underline cursor-pointer'>About Us</p></Link>

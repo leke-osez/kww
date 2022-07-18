@@ -93,42 +93,43 @@ export default function Home() {
           Read Blog
         </h1>
         <div className="grid grid-cols-2 grid-row-1 overflow-hidden sm:grid-cols-3 xl:grid-cols-6 w-full h-fit gap-3 ">
-          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
+          
+          {/* <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
             <BlogCard
-              imageUrl={WhiteShirt}
+              imageUrl=''
               description="Start your wave journey"
             />
           </div>
           <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
             <BlogCard
-              imageUrl={WhiteShirt}
+              imageUrl=''
               description="Start your wave journey"
             />
           </div>
           <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
             <BlogCard
-              imageUrl={WhiteShirt}
+              imageUrl=''
               description="Start your wave journey"
             />
           </div>
           <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
             <BlogCard
-              imageUrl={WhiteShirt}
+              imageUrl=''
               description="Start your wave journey"
             />
           </div>
           <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
             <BlogCard
-              imageUrl={WhiteShirt}
+              imageUrl=''
               description="Start your wave journey"
             />
           </div>
           <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
             <BlogCard
-              imageUrl={WhiteShirt}
+              imageUrl=''
               description="Start your wave journey"
             />
-          </div>
+          </div> */}
         </div>
 
         {/* scroll dots */}
@@ -159,3 +160,10 @@ export default function Home() {
     </div>
   );
 }
+
+
+// export const getStaticProps = ()=>{
+//   const bannerQuery = '*[_type == "banner"]'
+//   const blog = '*[_type == "banner"]'
+
+// }

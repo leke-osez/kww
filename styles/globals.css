@@ -150,3 +150,54 @@ input[type="number"] {
     rgba(20, 184, 166, 0.7) 100%
   );
 }
+
+.blog-image {
+  background-image: url("/memphis1.jpg");
+  background-repeat: repeat;
+  background-size: contain;
+}
+.rotate {
+  transform: rotate(-90deg);
+
+  /* Legacy vendor prefixes that you probably don't need... */
+
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+
+  /* IE */
+  -ms-transform: rotate(-90deg);
+
+  /* Opera */
+  -o-transform: rotate(-90deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.products_category {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.product-image {
+  height: 100px;
+}
+
+@media screen and (min-width: 265px) {
+  .products_category {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .product-image {
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .products_category {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .product-image {
+    width: 150px;
+  }
+}

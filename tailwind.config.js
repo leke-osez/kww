@@ -4,7 +4,13 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",],
   theme: {
-    extend: {},
+    extend: {
+      screens:{
+        'smaller': '300px',
+        'smallest': '630px'
+      }
+    },
+    
   },
   plugins: [],
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {default  as money} from "../lib/moneyString";
 
-const SlashedPrice = ({discount,price}) => {
+const SlashedPrice = ({price}) => {
   return (
     <div className=' relative w-fit h-fit flex items-center justify-center '>     
         

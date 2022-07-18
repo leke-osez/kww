@@ -26,7 +26,7 @@ const about = () => {
           {/* <p className="font-semibold md:text-2xl text-xl mb-3 text-black/70">
             Products et Services
           </p> */}
-          <div className="flex justify-center items-center w-full gap-3 md:gap-7 flex-wrap text-black text-6xl">
+          <div className="flex justify-center items-end w-full gap-3 md:gap-7 flex-wrap text-black text-6xl">
             <div className="w-[200px]  aspect-square md:w-[400px] py-3  bg-white rounded-md flex flex-col items-center">
               {/* products */}
               <AiOutlineShoppingCart />
@@ -55,7 +55,7 @@ const about = () => {
                   Services
                 </p>
               </div>
-              <div className="w-full md:text-lg text-base px-3 md:px-5 flex flex-col gap-3">
+              <div className="w-full md:text-lg text-base px-3 md:px-5 flex flex-col gap-3 text-start">
                   <div className="flex items-center gap-3"><GiCheckMark className="md:text-2xl text-green-600"/><p>Wave tutorials</p></div>
                   <div className="flex items-center gap-3"><GiCheckMark className="md:text-2xl text-green-600"/><p>Hair tips</p></div>
                   <div className="flex items-center gap-3"><GiCheckMark className="md:text-2xl text-green-600"/><p>Periodic wave checks</p></div>

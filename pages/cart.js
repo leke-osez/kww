@@ -12,6 +12,7 @@ import Image from "next/image";
 import QtyAdjust from "../components/QtyAdjust";
 import Link from "next/link";
 import {default  as money} from "../lib/moneyString";
+import { UrlFor } from "../lib/client";
 // import { UrlFor } from "../lib/client";
 // import getStripe from "../lib/getStripe";
 
@@ -86,12 +87,11 @@ const Cart = () => {
             cartItems.map((item) => (
               <div className="flex space-x-2 w-full" key={item._id}>
                 <div className=" h-[100px] w-[100px] md:h-[140px] md:w-[140px] relative border-r-[1px] border-black/20 px-3">
-                  <Image
-                    src={item.product}
+                  <img
+                    src={UrlFor(item.image[0])}
                     alt={item.name}
                     width="100%"
                     height="105%"
-                    layout="responsive"
                   />
                 </div>
                 <div className="w-[50%] flex justify-between items-start relative md:pl-3">

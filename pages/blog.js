@@ -2,20 +2,23 @@ import React from "react";
 import BlogBanner from "../components/blogBanner";
 import BlogCard from "../components/blogCard";
 import WhiteShirt from "../public/dummyProducts/tshirtwhite.png";
-import Link from 'next/link'
+import Link from 'next/link';
+import { client } from '../lib/client';
 
-const blog = () => {
+const blog = ({blogData}) => {
+  console.log(blogData)
   return (
     <div>
       <BlogBanner
         title="Get Hair Tips"
         backgroundColor={"bg-slate-900 "}
+        content = 'Stay Wavyy'
       />
       <div className="md:p-4 p-2 mt-12 flex flex-col items-center gap-2 ">
         
         {/* Blog Container 1 */}
 
-        <div className="px-4 md:px-7 w-full flex flex-col items-center">
+        <div className="sm:px-4 md:px-7 w-full flex flex-col items-center">
           <p className="text-start w-full md:text-2xl text-xl font-normal text-slate-600 mb-2 md:mb-4">
             Popular
           </p>
@@ -23,22 +26,29 @@ const blog = () => {
             {/* Big  card */}
             <div className="flex-2 aspect-square  col-span-2 row-span-2 ">
               <BlogCard
-                imageUrl={WhiteShirt}
-                description="Start your wave journey"
+                imageUrl={blogData[0].image}
+                description={blogData[0].title}
+                slug = {blogData[0].slug}
               />
             </div>
 
             {/* Small cards*/}
-            <div className="md:w-full aspect-square ">
+            {blogData.slice(1,5).map((blog)=>(
+              <div className="md:w-full aspect-square " key = {blog._id}>
               <BlogCard
-                imageUrl={WhiteShirt}
-                description="Start your wave journey"
+                imageUrl={blog.image}
+                description={blog.title}
+                slug = {blog.slug}
               />
-            </div>
-            <div className=" w-full aspect-square">
+              </div>
+            )
+            )}
+            
+            
+            {/* <div className=" w-full aspect-square">
               <BlogCard
-                imageUrl={WhiteShirt}
-                description="Start your wave journey"
+                imageUrl={blogData[2].image}
+                description={blogData[2].title}
               />
             </div>
 
@@ -53,7 +63,7 @@ const blog = () => {
                 imageUrl={WhiteShirt}
                 description="Start your wave journey"
               />
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -74,42 +84,59 @@ const blog = () => {
           <p className="text-start relative md:text-2xl text-lg font-normal text-slate-600 mb-4">
             Content for Kings
           </p>
-          <div className="w-full  relative grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-3">
+          {/* <div className="w-full  relative grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-3">
             <div className="w-full  flex items-center justify-center aspect-square">
               <BlogCard
-                imageUrl={WhiteShirt}
+                imageUrl=''
                 description="Start your wave journey"
               />
             </div>
             <div className=" w-full  flex items-center justify-center aspect-square">
               <BlogCard
-                imageUrl={WhiteShirt}
+                imageUrl=''
                 description="Start your wave journey"
               />
             </div>
             <div className=" w-full  flex items-center justify-center aspect-square">
               <BlogCard
-                imageUrl={WhiteShirt}
+                imageUrl=''
                 description="Start your wave journey"
               />
             </div>
             <div className=" w-full  flex items-center justify-center aspect-square">
               <BlogCard
-                imageUrl={WhiteShirt}
+                imageUrl=''
                 description="Start your wave journey"
               />
             </div>
             <div className=" w-full  flex items-center justify-center aspect-square">
               <BlogCard
-                imageUrl={WhiteShirt}
+                imageUrl=''
                 description="Start your wave journey"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
   );
 };
 
+export const getServerSideProps = async ()=>{
+  const blogQuery = `*[_type == "blog" ] {
+    title, image, title, slug, _id
+  }`
+  const blogData = await client.fetch(blogQuery)
+
+  // const bannerQuery = '*[_type == "banner"]'
+  // const bannerData =await client.fetch(bannerQuery)
+
+  return {
+    props: {blogData}
+  }
+}
+
+
 export default blog;
+
+
