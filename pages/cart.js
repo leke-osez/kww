@@ -85,6 +85,7 @@ const Cart = () => {
         <div className="w-full flex flex-col items-center md:w-[500px] space-y-10 overflow-y-scroll  flex-1">
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
+              // cart item
               <div className="flex space-x-2 w-full" key={item._id}>
                 <div className=" h-[100px] w-[100px] md:h-[140px] md:w-[140px] relative border-r-[1px] border-black/20 px-3">
                   <img
@@ -99,7 +100,7 @@ const Cart = () => {
                     <h5 className="text-xl font-semibold capitalize">
                       {item.name}
                     </h5>
-                    <h4>Price: ${money(item.price)}</h4>
+                    <h4>Price: &#x20A6;{money(item.price)}</h4>
                     <h4>{<QtyAdjust cartQtyAdjust item={item} />}</h4>
                   </div>
                   <div className="">
@@ -117,11 +118,11 @@ const Cart = () => {
             ))}
         </div>
         {cartItems.length >= 1 && (
-          <div className="py-3">
-            <div className="flex justify-start items-center space-x-3 mb-10">
+          <div className="py-3 mb-2">
+            <div className="flex justify-start items-center space-x-3 mb-5 md:mb-10">
               <h3 className="text-xl md:text-2xl font-semibold">Subtotal:</h3>
               <h3 className="text-xl md:text-2xl font-semibold">
-                ${money(
+              &#x20A6;{money(
                   cartItems.reduce(
                     (total, item) => total + item.quantity * item.price,
                     0
@@ -130,13 +131,16 @@ const Cart = () => {
               </h3>
             </div>
             <div className=" w-[full] flex justify-center items-center">
+              <Link
+                href = '/checkout'
+              >
               <button
                 type="button"
-                className="text-xl text-white bg-purple-900 font-semibold text-center px-9 py-3 flex justify-center items-center"
-                onClick={handleCheckout}
+                className="text-2xl text-white font-semibold text-center px-10 py-3 flex justify-center items-center gold"
               >
-                Pay with Stripe
+                Check Out 
               </button>
+              </Link>
             </div>
           </div>
         )}

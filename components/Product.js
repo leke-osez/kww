@@ -43,7 +43,7 @@ const Product = ({
             </p>
             <div className="flex space-x-4 mt-2 items-center">
               <p className="leading-none text-lg">
-                ${money(discount ? price - 0.01 * discount * price : price)}{" "}
+              &#x20A6;{money(discount ? price - 0.01 * discount * price : price)}{" "}
               </p>
               {discount > 0 && (
                 <SlashedPrice discount={discount} price={price} />

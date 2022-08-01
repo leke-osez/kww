@@ -149,14 +149,7 @@ export default function Home() {
       </div>
       </div>
 
-      {/* <div className='bg-inherit px-7 md:px-20'>
-        {
-          Object.keys(categories).map((products)=>(
-            <Category products={categories[products]} title = {products} key ={products}/>
-          ))
 
-        }
-      </div> */}
     </div>
   );
 }

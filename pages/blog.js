@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { client } from '../lib/client';
 
 const blog = ({blogData}) => {
-  console.log(blogData)
   return (
     <div>
       <BlogBanner
@@ -22,7 +21,7 @@ const blog = ({blogData}) => {
           <p className="text-start w-full md:text-2xl text-xl font-normal text-slate-600 mb-2 md:mb-4">
             Popular
           </p>
-          <div className="grid w-[80%] sm:grid-cols-4 sm:grid-rows-2 grid-cols-2  grid-rows-4 md:mt-6 md:h-fit h-fit md:items-start gap-2 ">
+          <div className="grid w-[90%] md:w-[80%] sm:grid-cols-4 sm:grid-rows-2 grid-cols-2  grid-rows-4 md:mt-6 md:h-fit h-fit md:items-start gap-2 ">
             {/* Big  card */}
             <div className="flex-2 aspect-square  col-span-2 row-span-2 ">
               <BlogCard

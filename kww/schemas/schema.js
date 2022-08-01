@@ -10,11 +10,13 @@ import shampoo from './shampoo';
 import brush from './brush';
 import creamOil from './creamOil';
 import blogContent from './blog';
+import order from './order';
+import test from './test'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    item, durag, wavecap, shampoo, brush, creamOil, blogContent
+    item, durag, wavecap, shampoo, brush, creamOil, blogContent,order,test
   ]),
 })

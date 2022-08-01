@@ -13,7 +13,7 @@ const support = () => {
   return (
     <div className="w-full pt-20 px-10 bg-gray-500/10 flex flex-col gap-3 ">
       <div className="w-full md:w-[70%] m-auto sm:grid grid-cols-2 xl:py-auto bg-white md:gap-x-20 p-3 md:p-5">
-        <div className=" md:w-[100%] xl:w-[500px]  w-full">
+        <div className="  xl:w-[400px]  w-full">
           <Image
             src={customerCare}
             alt="customer care"

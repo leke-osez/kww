@@ -201,3 +201,43 @@ input[type="number"] {
     width: 150px;
   }
 }
+.para_spacing{
+  line-height: 1.3;
+  letter-spacing: 0.01rem;
+  word-spacing: 0.17rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+.para_spacing p{
+  margin-bottom: 0.6rem;
+
+}
+.para_spacing li{
+  margin-bottom: 0.5rem
+}
+.para_spacing ul{
+  list-style-type: disc;
+}
+.para_spacing ol{
+  list-style-type:upper-roman;
+  
+}
+
+.gold{
+  background-color: rgb(95, 204, 32);
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 400px
+}
+.form-group label{
+  font-weight: 600;
+}
+
+.form-group input{
+  border: 1px solid rgb(54, 153, 192);
+  border-radius: 0.3rem;
+  height: 2rem;
+}

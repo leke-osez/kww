@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className='w-full bg-[#031B34] h-fit py-5 mt-10 md:px-10 xl:px-20 md:py-10'>
       {/* Top footer */}
-      <div className='flex md:gap-7 gap-x-7 gap-y-7 flex-wrap md:justify-between  text-white py-5 xl:px-40 px-5 md:px-20'>
+      <div className='flex md:gap-7 gap-x-7 gap-y-7 flex-wrap sm:justify-between  text-white py-5 xl:px-40 px-5 md:px-20'>
 
       <div className='w-[100px] md:w-fit'>
         {/* Name and Logo */}

@@ -5,7 +5,7 @@ import { products as categories } from "../lib/dummy";
 import { client } from '../lib/client';
 
 
-const products = ({productsData}) => {
+const   Products = ({productsData}) => {
   const [pageScroll, setPageScroll] = useState(false);
   const element = useRef();
   const productsList = [
@@ -19,13 +19,7 @@ const products = ({productsData}) => {
   ];
 
   const [productState, setProductState] = useState(0);
-  // useEffect(()=>{
-  //   window.scrollTo(0,pageScroll)
-  // },
-  // [])
-  // useEffect(()=>{
-  //   se
-  // })
+  
   return (
     <div
       className="bg-white w-full pt-[60px] md:pt-20 px-4 sm:px-7 md:px-20"
@@ -46,7 +40,7 @@ const products = ({productsData}) => {
           
             <div className="hover-effect absolute top-full min-w-fit flex-col gap-2 p-2 px-3 bg-white z-[100] shadow-lg ">
               {productsList.map((product, id) => (
-                <p className="min-w-[120px]" key={id} onClick = {()=>setProductState(id)}>{product.alias}</p>
+                <p className="min-w-[120px]" key={id} onClick = {()=>{setProductState(id)}}>{product.alias}</p>
               ))}
             </div>
           
@@ -76,4 +70,4 @@ export const getServerSideProps = async ()=>{
 
 
 
-export default products;
+export default Products;
