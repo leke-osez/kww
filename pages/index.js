@@ -1,7 +1,6 @@
 import Head from "next/head";
 import React, { useEffect, useRef } from "react";
 import { LandingPageBanner, Category, Product } from "../components";
-import { products as categories } from "../lib/dummy";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import BlogCard from "../components/BlogCard";
 import hairModel1 from "../public/landingPage/hair_model1.png";
@@ -24,7 +23,6 @@ export default function Home({ blogData, productsData }) {
   // },
   // [])
   
-  console.log(blogData)
   return (
     <div className="bg-white w-full" ref={element}>
       <LandingPageBanner />
