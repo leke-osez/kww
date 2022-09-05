@@ -6,7 +6,7 @@ import {
   } from "react-icons/ai";
 import Link from 'next/link';
 import {default  as money} from "../lib/moneyString";
-import Product from './product';
+import Product from './Product';
 
 
 const Category = ({products, filter}) => {
