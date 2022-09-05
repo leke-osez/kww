@@ -20,7 +20,7 @@ __Paystack API__ is a payment gateway for easy payment in Nigeria
 
 ## FEATURES
 - Product and Content management system for Merchant.
-- User-Interface for Customer to order and read blogs.
+- User-Interface for Customer to order items and read blogs.
 - Category List to display items
 - Cart system to add items to be ordered.
 - Payment gateway with paystripe
