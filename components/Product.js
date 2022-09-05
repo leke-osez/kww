@@ -10,7 +10,7 @@ const Product = ({
 }) => {
   return (
     <div>
-      <Link href={`/product/${slug.current}`}>
+      <Link href={`/product/${slug?.current}`}>
         <div className="relative product p-2  overflow-hidden w-full cursor-pointer">
           {/* hover effect */}
           <div className="absolute top-0 bottom-0 left-0 right-0 bg-black/10 z-10 item-view cursor-pointe">

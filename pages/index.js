@@ -19,14 +19,12 @@ import expertise from "../public/landingPage/true_expertise.webp";
 export default function Home({ blogData, productsData }) {
   // const [pageScroll,setPageScroll ] = useState(2)
   const element = useRef();
-
   // useEffect(()=>{
   //   window.scrollTo(0,pageScroll)
   // },
   // [])
-  // useEffect(()=>{
-  //   se
-  // })
+  
+  console.log(blogData)
   return (
     <div className="bg-white w-full" ref={element}>
       <LandingPageBanner />
@@ -206,7 +204,7 @@ export default function Home({ blogData, productsData }) {
           Hair tips you should read
         </h1>
         <div className="grid grid-cols-2 grid-row-1 overflow-hidden sm:grid-cols-3 xl:grid-cols-5 w-full h-fit gap-3 ">
-          {blogData.map((blog) => {
+          {blogData.map((blog) => 
             <div className="md:w-full aspect-square " key={blog._id}>
               <BlogCard
                 imageUrl={blog.image}
@@ -214,7 +212,7 @@ export default function Home({ blogData, productsData }) {
                 slug={blog.slug}
               />
             </div>
-          })}
+          )}
         </div>
 
         {/* scroll dots */}
@@ -223,7 +221,7 @@ export default function Home({ blogData, productsData }) {
 
      
     </div>
-  );
+  )
 }
 
 export const getServerSideProps = async () => {
@@ -233,6 +231,7 @@ export const getServerSideProps = async () => {
   const productsQuery = '*[_type == "item"]';
   const productsData = await client.fetch(productsQuery);
   const blogData = await client.fetch(blogQuery);
+  console.log(blogData)
 
   // const bannerQuery = '*[_type == "banner"]'
   // const bannerData =await client.fetch(bannerQuery)
