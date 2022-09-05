@@ -10,6 +10,8 @@ const Navbar = () => {
   const { totalQuantity, setShowCart, setShowMenu } = useStateContext();
   return (
     <div className="flex justify-between items-center bg-slate-900/80 px-4 sm:px-5 md:px-24 py-3 md:py-4 relative ">
+      
+      {/* amen */}
       <button
         className=" sm:hidden"
         onClick={() => {
@@ -18,6 +20,8 @@ const Navbar = () => {
       >
         <RiMenu2Line className="text-white text-2xl md:text-3xl " />
       </button>
+
+
       <div className="flex items-center h-full cursor-pointer">
         <Link href={"/"} >
           <div className="flex items-center ">

@@ -224,14 +224,11 @@ export default function Home({ blogData, productsData }) {
 
 export const getServerSideProps = async () => {
   const blogQuery = `*[_type == "blog" ] {
-    title, image, title, slug, _id
+    title, image, slug, _id
   }`;
   const productsQuery = '*[_type == "item"]';
   const productsData = await client.fetch(productsQuery);
   const blogData = await client.fetch(blogQuery);
-
-  // const bannerQuery = '*[_type == "banner"]'
-  // const bannerData =await client.fetch(bannerQuery)
 
   return {
     props: { blogData, productsData },

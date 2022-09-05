@@ -115,7 +115,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     _id, image, title,"content": content.asset->url
   }`;
   const blogsQuery = `*[_type == "blog" ] {
-    title, image, title, slug, _id, 
+    title, image, slug, _id, 
   }`;
   const blogs = await client.fetch(blogsQuery);
   const blogData = await client.fetch(blogQuery);

@@ -32,7 +32,7 @@ const   Products = ({productsData}) => {
      
     >
       <div className="w-full pt-[10rem] pb-3 relative">
-        <div className="flex gap-2 relative items-center w-fit  mb-6">
+        <div className="flex gap-2 relative items-center w-fit drop-products mb-6">
           <div className="w-fit">
             <p className="font-semibold md:text-lg" >Filter</p>
           </div>
