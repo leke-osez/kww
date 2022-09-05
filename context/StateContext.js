@@ -38,7 +38,6 @@ export const StateContext = ({ children }) => {
       setCartItems([...cartItems, product]);
     }
     setTotalQuantity((prevQty) => prevQty + quantity);
-    console.log(cartItems)
 
   };
 
@@ -81,7 +80,6 @@ export const StateContext = ({ children }) => {
           (prevTotalQuantity) => prevTotalQuantity - foundProduct.quantity
         );
       }
-      console.log(cartItems)
 
   };
   useEffect(()=>{

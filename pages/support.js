@@ -38,7 +38,6 @@ const Support = () => {
       if (!fieldCheck()) return
 
     setLoading(true);
-    console.log(`${process.env.NEXT_PUBLIC_SECRET_KEY}`)
     try {
       emailjs.sendForm(serviceId, templateId, e.target,publicKey )
       .then((result) => {

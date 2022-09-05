@@ -11,7 +11,7 @@ import Product from './Product';
 
 const Category = ({products, filter}) => {
   return (
-    <div className='md:mt-10 bg-inherit relative min-w-[100vh]'>
+    <div className='md:mt-10  bg-inherit relative min-w-[100vw]'>
         {/* header */}
         {/* <div className='w-full relative h-10  flex items-center justify-center bg-inherit'>
            
@@ -22,7 +22,7 @@ const Category = ({products, filter}) => {
             <div className='h-full flex items-center justify-center '><p className='text-white'>Check {`${title} section`}</p><AiOutlineRight className='text-2xl text-white text-center'/></div>
         </div> */}
         {/* Products */}
-        <div className='mr-3 md:mr-5 xl:mr-7 gap-4 md:gap-5 xl:gap-7 grid sm:grid-cols-3 xl:grid-cols-4 grid-cols-2 products_category'>
+        <div className='mr-3 md:mr-5 xl:mr-7 gap-4 md:gap-5 xl:gap-7 grid sm:grid-cols-3 xl:grid-cols-4 grid-cols-2'>
             
             { filter === 'all' && products.map((item)=>(
               

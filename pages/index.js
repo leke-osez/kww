@@ -229,7 +229,6 @@ export const getServerSideProps = async () => {
   const productsQuery = '*[_type == "item"]';
   const productsData = await client.fetch(productsQuery);
   const blogData = await client.fetch(blogQuery);
-  console.log(blogData)
 
   // const bannerQuery = '*[_type == "banner"]'
   // const bannerData =await client.fetch(bannerQuery)

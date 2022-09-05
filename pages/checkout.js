@@ -52,7 +52,6 @@ const Checkout = () => {
     text: "Pay Now",
 
     onSuccess: (response) => {
-      console.log(response);
       alert("Thanks for doing business with us! Come back soon!!");
     },
     onClose: () => alert("Wait! You need this oil, don't go!!!!"),
@@ -156,7 +155,6 @@ const Checkout = () => {
                       >
                         <div
                           onClick={() => {
-                            console.log(state);
                             setFormField({ ...formField, state });
                           }}
                           className="w-full"

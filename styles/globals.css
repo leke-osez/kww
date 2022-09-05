@@ -184,21 +184,13 @@ input[type="number"] {
   height: 100px;
 }
 
-@media screen and (min-width: 265px) {
-  .products_category {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .product-image {
-    height: 100px;
-  }
-}
 
 @media screen and (min-width: 500px) {
   .products_category {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .product-image {
-    width: 150px;
+    min-width: 150px;
   }
 }
 .para_spacing{
@@ -269,4 +261,25 @@ input[type="number"] {
 .c12{
   font-weight: 700;
   font-size: 1.2rem;
+}
+
+/* Nav menu slide out */
+.nav__menu{
+  position: fixed;
+  bottom:0;
+  left: 0;
+  transition: transform .3s
+  cubic-bezier(0, .52, 0, 1);
+  width: 100vw;
+  height: 100vh;  
+  z-index: 160
+}
+
+.nav__menu-hide{
+  transform: translate3d(-100vw, 0, 0);
+}
+
+.nav__menu-show{
+  transform: translate3d(0, 0, 0);
+
 }

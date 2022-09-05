@@ -14,15 +14,15 @@ const Layout = ({ children }) => {
       <Head>
         <title>KWW</title>
         <Head>
-      <link rel="shortcut icon" href="/favico.ico" />
+    
     </Head>
       </Head>
       <header className="relative">
         <div >       
         <div className="fixed top-0 w-full z-[50]"><Navbar /></div>
         </div>
-        <div className="relative">
-          {showMenu && <SideModal><SideMenu/></SideModal>}
+        <div className={`relative nav__menu ${showMenu ? 'nav__menu-show' : 'nav__menu-hide'}`}>
+          <SideModal><SideMenu/></SideModal>
         </div>
       </header>
 

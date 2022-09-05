@@ -34,11 +34,7 @@ const ProductDetails = ({ product, products }) => {
   const router = useRouter();
 
   let discountPrice = 0.01 * discount * price;
-  console.log(product)
-  // const buyNow = (product, qty)=>{
-  //     onAdd(product, qty)
-  //     setShowCart(true)
-  // }
+
   const handleBuyNow = () => {
     setCartItems([
       {
@@ -177,7 +173,6 @@ export const getStaticPaths = async () => {
   const query = '*[_type == "item"] {slug{current}}';
   const products = await client.fetch(query);
 
-  console.log(products)
   const paths = products.map((product) => ({
     params: {
       slug: product?.slug?.current,

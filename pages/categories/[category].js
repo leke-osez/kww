@@ -29,7 +29,6 @@ const   Products = ({productsData}) => {
   ];
 
   const selectProduct = (product,id)=>{
-    console.log(product)
     setProductState(product.category)
     setIndex(id)
     router.push(`${product.category}`)
@@ -44,13 +43,12 @@ const   Products = ({productsData}) => {
     }
     setProductState(category)
     const indexProduct = productsList.findIndex((product)=> product.category === category) 
-    console.log(indexProduct)
     setIndex(indexProduct)
   },[category])
   
   return (
     <div
-      className="bg-white w-full pt-[60px] md:pt-20 px-4 sm:px-7 md:px-20"
+      className="bg-white w-full pt-[5rem] md:pt-20 px-4 sm:px-7 md:px-20"
       ref={element}
      
     >

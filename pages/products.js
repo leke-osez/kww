@@ -3,12 +3,14 @@ import { AiFillCaretDown, AiFillFilter } from "react-icons/ai";
 import { LandingPageBanner, Category } from "../components";
 import { client } from '../lib/client';
 import {setProducts} from '../context/StateContext'
+import { Router } from "next/router";
 
 
 const   Products = ({productsData}) => {
   const [pageScroll, setPageScroll] = useState(false);
+  
   const [productState, setProductState] = useState(0);
- 
+  const router = Router()
 
 
   const element = useRef();
@@ -29,8 +31,8 @@ const   Products = ({productsData}) => {
       ref={element}
      
     >
-      <div className="w-full py-1 relative">
-        <div className="flex gap-2 relative items-center w-fit drop-products mb-6">
+      <div className="w-full pt-[10rem] pb-3 relative">
+        <div className="flex gap-2 relative items-center w-fit  mb-6">
           <div className="w-fit">
             <p className="font-semibold md:text-lg" >Filter</p>
           </div>

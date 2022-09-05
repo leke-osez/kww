@@ -7,7 +7,7 @@ import { AiFillCaretDown, AiOutlineDown } from "react-icons/ai";
 const SideMenu = () => {
   const { setShowMenu } = useStateContext();
   return (
-    <div className="pt-[30px]">
+    <div className=" pt-[30px]">
       <div className="md:none flex w-full justify-end py-4 px-4 ">
         <button
           type="button"

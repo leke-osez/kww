@@ -13,7 +13,7 @@ const Product = ({
       <Link href={`/product/${slug?.current}`}>
         <div className="relative product p-2  overflow-hidden w-full cursor-pointer">
           {/* hover effect */}
-          <div className="absolute top-0 bottom-0 left-0 right-0 bg-black/10 z-10 item-view cursor-pointe">
+          <div className="absolute top-0 bottom-0 left-0 right-0 bg-black/10 z-10 item-view cursor-pointer">
             <div className="w-full h-full flex items-center justify-center">
               <p className="bg-white/80 text-black/70 py-3 px-5 font-semibold text-base text-center -mt-28 md:-mt-20">
                 VIEW
@@ -28,7 +28,7 @@ const Product = ({
             </div>
           )}
           {/* item content */}
-          <div className=" h-[200px] aspect-square sm:w-[150px] sm:h-[150px]  md:h-[200px] md:w-[200px] xl:h-[250px] xl:w-[250px] relative product-image">
+          <div className=" h-fit aspect-square w-[120px] sm:w-[150px] sm:h-[150px]  md:h-[200px] md:w-[200px] xl:h-[250px] xl:w-[250px] relative ">
             <img
               src={image ? UrlFor(image[0]) : ""}
               className="w-[100%] h-[100%] mx-auto object-contain"

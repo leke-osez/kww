@@ -31,7 +31,7 @@ const Footer = () => {
         <Link href={'/categories/durag'}><p className='text-white/60 cursor-pointer'>Durags</p></Link>
         <Link href={'/categories/creamAndOil'}><p className='text-white/60 cursor-pointer'>Hair cream</p></Link>
         <Link href={'/categories/shampoo'}><p className='text-white/60 cursor-pointer'>Shampoo</p></Link>
-        <Link href={'/categories/blog'}><p className='text-white/60 cursor-pointer'>Blog</p></Link>
+        <Link href={'/blog'}><p className='text-white/60 cursor-pointer'>Blog</p></Link>
       </div>
 
       <div className='flex flex-col gap-2'>

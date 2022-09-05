@@ -38,7 +38,6 @@ xhr.onreadystatechange = function () {
       // The request has been completed successfully
       const HTML = xhr.responseText
       const BODY = HTML.match(/(<body)(.*)<\/body>/gm)[0]
-      console.log(BODY)
       setBlog(BODY)
     } else {
       // Oh no! There has been an error with the request!
@@ -70,7 +69,7 @@ xhr.send();
       )}
       
       {/* TODO: Get text from doc */}
-      <main className="w-[60%] sm:w-[80%] w-full flex flex-col para_spacing md:text-[1.1rem] text-black/80 text-base px-4 font-regular "   >
+      <main className=" sm:w-[80%] w-full flex flex-col para_spacing md:text-[1.1rem] text-black/80 text-base px-4 font-regular "   >
         <div dangerouslySetInnerHTML={{__html:blog}} />
       </main>
       
