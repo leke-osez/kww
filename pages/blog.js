@@ -1,11 +1,9 @@
 import React from "react";
 import BlogBanner from "../components/blogBanner";
 import BlogCard from "../components/BlogCard";
-import WhiteShirt from "../public/dummyProducts/tshirtwhite.png";
 import Link from "next/link";
 import { client } from "../lib/client";
 import Image from "next/image";
-import waveJourney from "../public/blog/waving_journey.png";
 
 const blog = ({ blogData }) => {
   return (
