@@ -140,7 +140,7 @@ const blog = ({ blogData }) => {
           <p className="text-center mb-2 md:text-2xl">
             Up your wave game by using our trusted products and see reviews
           </p>
-          <Link href="/products">
+          <Link href="/categories/all">
             <button className="md:text-xl md:px-7 md:py-3 px-2 py-1 bg-black text-white rounded-full text-base md:font-semibold">
               Shop Now
             </button>
