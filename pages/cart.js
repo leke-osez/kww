@@ -67,7 +67,7 @@ const Cart = () => {
             <h3 className="text-3xl font-bold text-center">
               Your shopping bag is empty
             </h3>
-            <Link href={"/products"}>
+            <Link href={"/categories/all"}>
               <button
                 type="button"
                 className="relative mt-6 border-black border-4 px-4 py-3 text-black font-semibold text-center text-xl"
