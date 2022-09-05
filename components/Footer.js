@@ -18,27 +18,27 @@ const Footer = () => {
       </div>
 
       {/* Explore */}
-      <div>
+      <div >
         <p className='md:text-lg md:font-semibold'>Explore</p>
-        <Link href={'/'}><p className='text-white/60'>Home</p></Link>
-        <Link href = {'/products'}><p className='text-white/60'>Products</p></Link>
-        <Link href = {'/blog'}><p className='text-white/60'>Blog</p></Link>
+        <Link href={'/'}><p className='text-white/60 cursor-pointer'>Home</p></Link>
+        <Link href = {'/products'}><p className='text-white/60 cursor-pointer'>Products</p></Link>
+        <Link href = {'/blog'}><p className='text-white/60 cursor-pointer'>Blog</p></Link>
       </div>
 
-      <div>
+      <div >
         <p className='md:text-lg md:font-semibold'> Products </p>
-        <Link href={''}><p className='text-white/60' >Wave brush</p></Link>
-        <Link href={''}><p className='text-white/60'>Durags</p></Link>
-        <Link href={''}><p className='text-white/60'>Hair cream</p></Link>
-        <Link href={''}><p className='text-white/60'>Shampoo</p></Link>
-        <Link href={''}><p className='text-white/60'>Blog</p></Link>
+        <Link href={'/categories/brush'}><p className='text-white/60 cursor-pointer' >Wave brush</p></Link>
+        <Link href={'/categories/durag'}><p className='text-white/60 cursor-pointer'>Durags</p></Link>
+        <Link href={'/categories/creamAndOil'}><p className='text-white/60 cursor-pointer'>Hair cream</p></Link>
+        <Link href={'/categories/shampoo'}><p className='text-white/60 cursor-pointer'>Shampoo</p></Link>
+        <Link href={'/categories/blog'}><p className='text-white/60 cursor-pointer'>Blog</p></Link>
       </div>
 
       <div className='flex flex-col gap-2'>
-        <Link href={'/about'}><p>ABOUT US</p></Link>
-        <Link href={'/support'}><p>CONTACT US</p></Link>
-        <Link href={''}><p>TERMS</p></Link>
-        <Link href={'/'}><p>POLICIES</p></Link>
+        <Link href={'/about'}><p className='cursor-pointer'>ABOUT US</p></Link>
+        <Link href={'/support'}><p className='cursor-pointer'>CONTACT US</p></Link>
+        <Link href={''}><p className='cursor-pointer'>TERMS</p></Link>
+        <Link href={'/'}><p className='cursor-pointer'>POLICIES</p></Link>
         
       </div>
       </div>

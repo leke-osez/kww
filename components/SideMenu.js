@@ -21,7 +21,7 @@ const SideMenu = () => {
       </div>
       <div className="flex flex-col py-3 px-7 space-y-7 text-xl font-semibold">
         <div>
-          <Link href={"/products"}>
+          <Link href={"/categories/all"}>
             <div className="flex gap-2 items-center">
               <p>Products</p>
               <div onClick={() => setProductsMenu(false)}>
@@ -31,10 +31,12 @@ const SideMenu = () => {
           </Link>
           {
             <div className="pl-4 text-black/60 text-lg list-none flex flex-col gap-2 mt-2 font-normal">
-              <li>Brushes</li>
-              <li>Durags</li>
-              <li>Wava-caps</li>
-              <li>Hair Creams & Oil</li>
+              <li><Link href={"/categories/brush"}>Brushes</Link></li>
+              <li><Link href={"/categories/durag"}>Durags</Link></li>
+              <li><Link href={"/categories/wavecap"}>Wava-caps</Link></li>
+              <li><Link href ={"/categories/creamAndOil"}>Hair Creams & Oil</Link></li>
+              <li><Link href ={"/categories/shampoo"}>Shampoo</Link></li>
+
             </div>
           }
         </div>

@@ -11,6 +11,7 @@ export const StateContext = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [qty, setQty] = useState(1);
+  const [products, setProducts] = useState(null)
 
   const onAdd = (items, quant) => {
     const quantity = parseInt(quant)
@@ -105,7 +106,8 @@ export const StateContext = ({ children }) => {
         totalQuantity,
         setTotalQuantity,
         toggleCartQuantity,
-        showMenu,setShowMenu
+        showMenu,setShowMenu,
+        products, setProducts
       }}
     >
       {children}

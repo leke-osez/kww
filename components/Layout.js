@@ -13,6 +13,9 @@ const Layout = ({ children }) => {
     <div className="">
       <Head>
         <title>KWW</title>
+        <Head>
+      <link rel="shortcut icon" href="/favico.ico" />
+    </Head>
       </Head>
       <header className="relative">
         <div >       

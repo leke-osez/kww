@@ -11,7 +11,7 @@ const Product = ({
   return (
     <div>
       <Link href={`/product/${slug.current}`}>
-        <div className="relative product p-2  w-full cursor-pointer">
+        <div className="relative product p-2  overflow-hidden w-full cursor-pointer">
           {/* hover effect */}
           <div className="absolute top-0 bottom-0 left-0 right-0 bg-black/10 z-10 item-view cursor-pointe">
             <div className="w-full h-full flex items-center justify-center">
@@ -38,7 +38,7 @@ const Product = ({
 
           <div className="relative mt-4 w-full overflow-hidden ">
             <h2 className="font-semibold md:text-lg uppercase text-sm">{name}</h2>
-            <p className="text-black/60 font-base md:font-semibold text-sm max-lines w-full">
+            <p className="text-black/60 font-base md:font-semibold text-sm  max-lines w-full">
               {description}
             </p>
             <div className="flex space-x-4 mt-2 items-center">

@@ -1,13 +1,22 @@
 import Head from "next/head";
 import React, { useEffect, useRef } from "react";
-import { LandingPageBanner, Category } from "../components";
+import { LandingPageBanner, Category, Product } from "../components";
 import { products as categories } from "../lib/dummy";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-import BlogCard from "../components/blogCard";
-import WhiteShirt from "../public/dummyProducts/tshirtwhite.png";
+import BlogCard from "../components/BlogCard";
+import hairModel1 from "../public/landingPage/hair_model1.png";
+import hairModel2 from "../public/landingPage/hair_model2.png";
+import rainbow from "../public/landingPage/wave_top_view.png";
+import SlashedPrice from "../components/SlashedPrice";
 import Link from "next/link";
+import { client } from "../lib/client";
+import Image from "next/image";
+import money from "../lib/moneyString";
+import clean from "../public/landingPage/clean.webp";
+import trusted from "../public/landingPage/products.webp";
+import expertise from "../public/landingPage/true_expertise.webp";
 
-export default function Home() {
+export default function Home({ blogData, productsData }) {
   // const [pageScroll,setPageScroll ] = useState(2)
   const element = useRef();
 
@@ -23,36 +32,19 @@ export default function Home() {
       <LandingPageBanner />
 
       {/* Introduction */}
-      <div className="flex flex-col justify-center items-center px-2 py-5 leading-6 mt-3  w-[100%] ">
+      <div className="flex flex-col justify-center items-center px-2 py-5 leading-6 mt-[3rem] md:mt-[6rem]  w-[100%] ">
         <h1 className="text-center md:text-4xl text-3xl font-normal text-slate-800 ">
           Your Hair is Your Crown
         </h1>
-        <div className="flex md:w-[70%] w-[80%] md:mt-7 mt-3 xl:text-xl  md:text-lg text-lg space-y-2 gap-3 text-center">
+        <div className="flex md:w-[60%] w-[80%] md:mt-7 mt-3 xl:text-xl  md:text-lg text-lg space-y-2 gap-3 text-center">
           <div className="flex items-start justify-center md:text-2xl">
             <FaQuoteLeft />
           </div>
           <p className="md:leading-8">
-            Team has taken North America by storm! Our various esports teams
-            have consistently won tournaments against some of the largest
-            schools in North America.
+            Dear Kings, we at KWW believe that your hair is your crown and
+            should be treated with uttermost care.
           </p>
-          {/* <p>
-              St. Clair students can expect to get the most out of their time at
-              college, both academically and socially. With a low
-              student-to-faculty ratio, faculty is easily accessible and
-              approachable to students. St. Clair is welcoming and friendly,
-              with many clubs and extracurricular activities to engage students
-              and help them get to know their peers. Our Saints Gaming esports
-            </p>
-            <p>
-              Saints Varsity athletics offers tremendous opportunity to get
-              involved in one of 16 sports on campus, from Basketball and Soccer
-              to Curling, Softball, Baseball or Cross Country. Saints athletes
-              have excelled on both the provincial and national stage with 81
-              provincial titles and 6 national titles to their name. And as a
-              varsity athlete, students receive $1,250 per sport semester. St.
-              Clair recently purchased the AKO Football franchise
-            </p> */}
+
           <div className="flex items-end justify-center md:text-2xl">
             <FaQuoteRight />
           </div>
@@ -60,103 +52,192 @@ export default function Home() {
       </div>
 
       {/* Products show */}
-      <div className="flex flex-col md:flex-row gap-3 w-full  relative md:mt-6 mt-3 xl:mt-9">
-        <div className="md:border-r-[1px] flex gap-2 relative w-full px-4 py-2 bg-gray-200 h-[280px] xl:h-[500px]">
-          <div className="h-[50%] w-[55%] bg-yellow-700/30 p-3"></div>
-          <div className="h-[60%] w-[45%] bg-white p-3 mt-3"></div>
+      <div className="flex flex-col md:flex-row gap-3 w-full  relative md:mt-[6rem]  mt-[3rem] ">
+        <div className="md:border-r-[1px] flex gap-2 relative w-full px-4 py-2  h-fit xl:h-fit">
+          <div className="relative h-[50%] w-[55%] bg-yellow-700/30 p-3">
+            <Image
+              src={hairModel1}
+              alt="landingBanner1"
+              layout="responsive"
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
+          <div className="relative h-[60%] w-[45%] bg-gray-900/70 p-3 mt-3">
+            <Image
+              src={rainbow}
+              alt="landingBanner2"
+              layout="responsive"
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
           <div className="absolute h-[60%] w-[40%] bg-gray-200 p-2 bottom-0 left-0 right-0 m-auto">
-            <div className="w-full h-full bg-black"></div>
+            <div className="w-full h-full bg-black overflow-hidden ">
+              <Image
+                src={hairModel2}
+                alt="landingBanner1"
+                layout="responsive"
+                style={{ width: "100%", height: "100%", position: "relative" }}
+              />
+            </div>
           </div>
         </div>
         <div className="flex flex-col items-center text-center w-full md:w-[50%]  md:p-4">
           <h1 className=" text-lg md:text-xl xl:text-2xl font-semibold  p-2 ">
-            Clair students can expect to get{" "}
+            Start your wave journey{" "}
           </h1>
-          <p className="text-base xl:text-xl text-black/60">
-            Saints Varsity athletics offers tremendous opportunity to get
-            involved in one of 16 sports on campus, from Basketball and Soccer
-            to Curling, Softball,
+          <p className="text-base xl:text-xl text-black/60 px-2">
+            <span className="font-medium text-black/80">A</span>ll great things
+            start from somewhere, no matter how small.{" "}
+            <span className="font-medium text-black/80">O</span>cean waves are
+            made of little drops.
+            <span className="font-medium text-black/80"> S</span>tarting your
+            wave journey can be daunting or might seem like a really &quot;high tide&quot;
+            but here in KingzWithWaves, we show you how to surf those tides
+            easily.
+            <span className="font-medium text-black/80"> W</span>e give the best
+            tips backed up with the ultimate curated products to make your
+            transition easy and if you have been in the game, we will up your
+            game.
           </p>
         </div>
       </div>
 
-      {/* <Link href="/products">
-        <div className="w-full flex justify-center mt-4">
-          <p className=" cursor-pointer border-black border-2 py-2 px-3 md:py-3 md:px-8 text-black text-lg md:text-xl font-semibold text-center w-fit ">
-            SHOP NOW
+      <div className="w-full flex justify-center">
+        <div className="w-full md:w-[80%] bg-teal-500/70 bg-ads min-h-[50px] md:h-fit flex flex-col justify-center items-center md:my-6 md:py-4 py-2 my-3 gap-3">
+          <p className="text-center mb-2 md:text-2xl">
+            Up your wave game by using our Quality and Trusted products 
           </p>
+          <Link href="/products">
+            <button className="md:text-xl md:px-7 md:py-3 px-2 py-1 bg-black text-white rounded-full text-base md:font-semibold">
+              Shop Now
+            </button>
+          </Link>
         </div>
-      </Link> */}
+      </div>
+
+      {/* WHAT WE DO */}
+      <div className="w-full mt-[4rem] bg-gray-500/30 flex flex-col items-center py-3 md:py-7">
+        <h3 className="text-3xl font-light mb-3">BRAND ETHOS</h3>
+        <div className="md:w-[90%] w-[90%] sm:w-[70%] grid  md:grid-cols-3 gap-3">
+          {/* NATURAL */}
+          <div className="bg-white  h-full w-[full] p-[2rem] flex flex-col items-center">
+            <div className=" w-full mb-2">
+              <div className="w-[3rem]">
+                <Image
+                  src={clean}
+                  alt="natural"
+                  width="100%"
+                  height="100%"
+                  style={{ color: "black" }}
+                />
+              </div>
+              <h4 className="text-xl">Natural products</h4>
+            </div>
+            <p>
+              We at KWW are green and environmental friendly so we have options for organic products.
+            </p>
+          </div>
+
+          {/* TRUSTED */}
+          <div className="bg-white h-full w-[full] p-[2rem] flex flex-col items-center">
+            <div className=" w-full mb-2">
+              <div className="w-[3rem]">
+                <Image
+                  src={trusted}
+                  alt="natural"
+                  width="100%"
+                  height="100%"
+                  style={{ color: "black" }}
+                />
+              </div>
+              <h4 className="text-xl">Quality and Affordable Products</h4>
+            </div>
+            <p>
+              We serve you nothing else but superior quality wave products all round and we know our Kings budgets vary so we got you covered with alternatives.
+            </p>
+          </div>
+
+          {/* EXPERTISE */}
+          <div className="bg-white h-full  w-[full] p-[2rem] flex flex-col items-center">
+            <div className=" w-full mb-2">
+              <div className="relative w-[3rem] ">
+                <Image
+                  src={expertise}
+                  alt="natural"
+                  width="100%"
+                  height="100%"
+                  layout="responsive"
+                  style={{ color: "black" }}
+                />
+                
+              </div>
+              <h4 className="text-xl">True Expertise</h4>
+            </div>
+            <p>
+              Through years of research and experience, we have created formulas serving as catalyst to speed up your wave transition process
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* PRODUCTS SECTION */}
+      <div className=" w-full px-3 xl:px-6 mt-9 flex flex-col xl:items-center">
+        <div></div>
+        <h2 className=" text-black/70 text-lg xl:text-2xl md:font-semibold mt-3 mb-2 text-start w-full">
+          Top products{""}
+        </h2>
+        <div className="gap-4 flex p-4 flex-row  items-start justify-start xl:justify-center overflow-x-auto md:max-w-[100%]  w-full">
+          {productsData.map((item, i) => (
+            <Product
+              key={item._id}
+              Link={Link}
+              Image={Image}
+              SlashedPrice={SlashedPrice}
+              item={item}
+              money={money}
+            />
+          ))}
+        </div>
+      </div>
+
       {/* Blog Show */}
       <div className="px-4 md:mt-9 mt-6 w-full flex flex-col items-center">
-        <h1 className="w-full text-start md:mb-3 md:text-xl text-base font-medium">
-          Read Blog
+        <h1 className="w-full text-black/70 text-start md:mb-3 md:text-xl text-base font-medium">
+          Hair tips you should read
         </h1>
-        <div className="grid grid-cols-2 grid-row-1 overflow-hidden sm:grid-cols-3 xl:grid-cols-6 w-full h-fit gap-3 ">
-          
-          {/* <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
-            <BlogCard
-              imageUrl=''
-              description="Start your wave journey"
-            />
-          </div>
-          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
-            <BlogCard
-              imageUrl=''
-              description="Start your wave journey"
-            />
-          </div>
-          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
-            <BlogCard
-              imageUrl=''
-              description="Start your wave journey"
-            />
-          </div>
-          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
-            <BlogCard
-              imageUrl=''
-              description="Start your wave journey"
-            />
-          </div>
-          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
-            <BlogCard
-              imageUrl=''
-              description="Start your wave journey"
-            />
-          </div>
-          <div className="w-full sm:w-[90%] md:w-full aspect-square m-auto">
-            <BlogCard
-              imageUrl=''
-              description="Start your wave journey"
-            />
-          </div> */}
+        <div className="grid grid-cols-2 grid-row-1 overflow-hidden sm:grid-cols-3 xl:grid-cols-5 w-full h-fit gap-3 ">
+          {blogData.map((blog) => {
+            <div className="md:w-full aspect-square " key={blog._id}>
+              <BlogCard
+                imageUrl={blog.image}
+                description={blog.title}
+                slug={blog.slug}
+              />
+            </div>
+          })}
         </div>
 
         {/* scroll dots */}
         <div></div>
       </div>
-      <div className="w-full flex justify-center">
 
-      <div className="w-full md:w-[80%] bg-teal-500/70 bg-ads min-h-[50px] md:h-fit flex flex-col justify-center items-center md:my-6 md:py-4 py-2 my-3 gap-3">
-        <p className="text-center mb-2 md:text-2xl">
-          Up your wave game by using our trusted products and see reviews
-        </p>
-        <Link href="/products">
-          <button className="md:text-xl md:px-7 md:py-3 px-2 py-1 bg-black text-white rounded-full text-base md:font-semibold">
-            Shop Now
-          </button>
-        </Link>
-      </div>
-      </div>
-
-
+     
     </div>
   );
 }
 
+export const getServerSideProps = async () => {
+  const blogQuery = `*[_type == "blog" ] {
+    title, image, title, slug, _id
+  }`;
+  const productsQuery = '*[_type == "item"]';
+  const productsData = await client.fetch(productsQuery);
+  const blogData = await client.fetch(blogQuery);
 
-// export const getStaticProps = ()=>{
-//   const bannerQuery = '*[_type == "banner"]'
-//   const blog = '*[_type == "banner"]'
+  // const bannerQuery = '*[_type == "banner"]'
+  // const bannerData =await client.fetch(bannerQuery)
 
-// }
+  return {
+    props: { blogData, productsData },
+  };
+};

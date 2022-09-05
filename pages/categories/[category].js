@@ -1,17 +1,23 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import { AiFillCaretDown, AiFillFilter } from "react-icons/ai";
-import { LandingPageBanner, Category } from "../components";
-import { client } from '../lib/client';
-import {setProducts} from '../context/StateContext'
+import { LandingPageBanner, Category } from "../../components";
+import { client } from '../../lib/client';
+import { useRouter } from 'next/router'
+
 
 
 const   Products = ({productsData}) => {
   const [pageScroll, setPageScroll] = useState(false);
-  const [productState, setProductState] = useState(0);
- 
+  const [productState, setProductState] = useState('all');
+  const [index, setIndex] = useState(0);
 
+
+  const router = useRouter()
+  const { category } = router.query 
 
   const element = useRef();
+
   const productsList = [
     {category:"all", alias:'All'},
     {category:"brush", alias:'Brushes'},
@@ -22,6 +28,25 @@ const   Products = ({productsData}) => {
     
   ];
 
+  const selectProduct = (product,id)=>{
+    console.log(product)
+    setProductState(product.category)
+    setIndex(id)
+    router.push(`${product.category}`)
+  }
+
+
+  useEffect(()=>{
+    if (!category){
+      setProductState('all')
+      setIndex(0)
+
+    }
+    setProductState(category)
+    const indexProduct = productsList.findIndex((product)=> product.category === category) 
+    console.log(indexProduct)
+    setIndex(indexProduct)
+  },[category])
   
   return (
     <div
@@ -35,7 +60,7 @@ const   Products = ({productsData}) => {
             <p className="font-semibold md:text-lg" >Filter</p>
           </div>
           <div className="border-[1px] relative flex items-center min-w-[60px] md:min-w-[90px] px-1 drop-products" >
-            <p className="flex-1 text-black/60 md:text-lg">{productsList[productState].alias}</p>
+            <p className="flex-1 text-black/60 md:text-lg">{productsList[index].alias}</p>
             <span>
               <AiFillCaretDown />
             </span>
@@ -43,7 +68,7 @@ const   Products = ({productsData}) => {
           
             <div className="hover-effect absolute top-full min-w-fit flex-col gap-2 p-2 px-3 bg-white z-[100] shadow-lg ">
               {productsList.map((product, id) => (
-                <p className="min-w-[120px]" key={id} onClick = {()=>{setProductState(id)}}>{product.alias}</p>
+                <p className="min-w-[120px]" key={id} onClick = {()=>{selectProduct(product,id)}}>{product.alias}</p>
               ))}
             </div>
           
@@ -54,12 +79,14 @@ const   Products = ({productsData}) => {
           
           <Category
             products={productsData}
-            filter = {productsList[productState].category}
+            filter = {productState}
           />
       </div>
     </div>
   );
 };
+
+
 
 export const getServerSideProps = async ()=>{
   const productsQuery = '*[_type == "item"]'
@@ -73,4 +100,7 @@ export const getServerSideProps = async ()=>{
 
 
 
-export default Products;
+
+
+  export default Products;
+  

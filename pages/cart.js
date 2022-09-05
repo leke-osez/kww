@@ -82,7 +82,7 @@ const Cart = () => {
         )}
 
         {/* In Cart */}
-        <div className="w-full flex flex-col items-center md:w-[500px] space-y-10 overflow-y-scroll  flex-1">
+        <div className="w-full flex flex-col items-center md:w-[500px] space-y-10 overflow-y-scroll scroll_style_button  flex-1">
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
               // cart item

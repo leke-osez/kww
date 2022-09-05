@@ -11,7 +11,7 @@ import Product from './product';
 
 const Category = ({products, filter}) => {
   return (
-    <div className='md:mt-10 bg-inherit relative '>
+    <div className='md:mt-10 bg-inherit relative min-w-[100vh]'>
         {/* header */}
         {/* <div className='w-full relative h-10  flex items-center justify-center bg-inherit'>
            
