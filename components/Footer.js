@@ -21,7 +21,7 @@ const Footer = () => {
       <div >
         <p className='md:text-lg md:font-semibold'>Explore</p>
         <Link href={'/'}><p className='text-white/60 cursor-pointer'>Home</p></Link>
-        <Link href = {'/products'}><p className='text-white/60 cursor-pointer'>Products</p></Link>
+        <Link href = {'/categories/all'}><p className='text-white/60 cursor-pointer'>Products</p></Link>
         <Link href = {'/blog'}><p className='text-white/60 cursor-pointer'>Blog</p></Link>
       </div>
 
