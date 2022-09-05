@@ -7,7 +7,7 @@ The __merchant__ interface- to manage the products and contents(blog) <br>
 The __customer__ interface- to order items and read blogs <br>
 
 __Sanity__ is a powerful tool that provides:
-- Database sysytem.
+- Database management sytem.
 - Query system (GROQ; similar to GraphQL).
 - Management UI that is fully customizeable.
 
