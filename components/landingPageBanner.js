@@ -38,7 +38,7 @@ const LandingPageBanner = () => {
         </div>
       </div>
 
-      <Link href="/products">
+      <Link href="/categories/all">
         <p className=" cursor-pointer bg-slate-600 border-black h-fit border-[.3px] py-2 px-3 md:py-3 md:px-8 text-white text-lg md:text-xl font-semibold text-center min-w-fit max-w-[200px] absolute bottom-10 left-0 right-0 m-auto">
           SHOP NOW
         </p>
