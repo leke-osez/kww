@@ -54,7 +54,7 @@ const Checkout = () => {
     onSuccess: (response) => {
       alert("Thanks for doing business with us! Come back soon!!");
     },
-    onClose: () => alert("Wait! You need this oil, don't go!!!!"),
+    onClose: () => alert("Wait! You need this to stay wavyy, don't go!!!!"),
   };
   useEffect(() => {
     if (!totalQuantity) {
