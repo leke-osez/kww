@@ -182,7 +182,7 @@ export default function Home({ blogData, productsData }) {
         <h2 className=" text-black/70 text-lg xl:text-2xl md:font-semibold mt-3 mb-2 text-start w-full">
           Top products{""}
         </h2>
-        <div className="gap-4 flex p-4 flex-row  items-start justify-start xl:justify-center overflow-x-auto md:max-w-[100%]  w-full">
+        <div className="gap-4 flex p-4 flex-row  items-start justify-start overflow-x-auto md:max-w-[100%]  w-full">
           {productsData.map((item, i) => (
             <Product
               key={item._id}
