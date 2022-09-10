@@ -86,7 +86,9 @@ export const StateContext = ({ children }) => {
     
     if (localStorage.getItem('cartItems')) {
       setCartItems(JSON.parse(localStorage.getItem('cartItems')))
-      setTotalQuantity(JSON.parse(localStorage.getItem('totalQuantity')))
+      const localQuantity = parseInt(JSON.parse(localStorage.getItem('totalQuantity')))
+      if (localQuantity <= 0)setTotalQuantity(0)
+      else setTotalQuantity(localQuantity)
       
     }
 
