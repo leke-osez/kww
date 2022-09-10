@@ -84,11 +84,20 @@ export const StateContext = ({ children }) => {
   };
   useEffect(()=>{
     
-    if (localStorage.getItem('cartItems')) {setCartItems(JSON.parse(localStorage.getItem('cartItems')));}
+    if (localStorage.getItem('cartItems')) {
+      setCartItems(JSON.parse(localStorage.getItem('cartItems')))
+      setTotalQuantity(JSON.parse(localStorage.getItem('totalQuantity')))
+      
+    }
+
     return
   },[])
   useEffect(()=>{
-    if (cartItems ) localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    if (cartItems ) {
+      localStorage.setItem('cartItems', JSON.stringify(cartItems))
+      localStorage.setItem('totalQuantity', JSON.stringify(totalQuantity))
+    
+    };
 
   },[cartItems])
   return (
