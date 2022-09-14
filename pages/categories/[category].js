@@ -48,12 +48,12 @@ const   Products = ({productsData}) => {
   
   return (
     <div
-      className="bg-white w-full pt-[5rem] md:pt-20 px-4 sm:px-7 md:px-20"
+      className="bg-white w-full pt-[5rem] md:pt-20 px-auto"
       ref={element}
      
     >
       <div className="w-full py-1 relative">
-        <div className="flex gap-2 relative items-center w-fit drop-products mb-6">
+        <div className="flex gap-2 relative items-center w-fit drop-products pl-7 mb-6">
           <div className="w-fit">
             <p className="font-semibold md:text-lg" >Filter</p>
           </div>
@@ -72,7 +72,7 @@ const   Products = ({productsData}) => {
           
         </div>
       </div>
-      <div className="bg-inherit  flex flex-col gap-2 relative">
+      <div className="bg-inherit  flex flex-col w-full items-center gap-2 relative">
         
           
           <Category

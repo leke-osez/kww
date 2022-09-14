@@ -27,7 +27,7 @@ const   Products = ({productsData}) => {
   
   return (
     <div
-      className="bg-white w-full pt-[60px] md:pt-20 px-4 sm:px-7 md:px-20"
+      className="bg-white w-full pt-[60px] md:pt-20 px-4 px-auto"
       ref={element}
      
     >
@@ -51,14 +51,7 @@ const   Products = ({productsData}) => {
           
         </div>
       </div>
-      <div className="bg-inherit  flex flex-col gap-2 relative">
-        
-          
-          <Category
-            products={productsData}
-            filter = {productsList[productState].category}
-          />
-      </div>
+      
     </div>
   );
 };

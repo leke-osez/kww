@@ -151,7 +151,7 @@ const ProductDetails = ({ product, products }) => {
         </h2>
         <div className="gap-4 flex p-4 flex-row  items-start justify-start  overflow-x-auto md:max-w-[100%]  w-full">
           {products.map((item, i) => {
-            if (item.slug.current === product.slug.current || category !== item.category) return;
+            if (item.slug.current === product.slug.current || category !== item.category || category === 'waveKit') return;
             return (
               <Product
                 key={item._id}

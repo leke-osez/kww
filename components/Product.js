@@ -11,7 +11,7 @@ const Product = ({
   return (
     <div>
       <Link href={`/product/${slug?.current}`}>
-        <div className="relative product p-2  overflow-hidden w-full cursor-pointer">
+        <div className="relative product p-2 w-[120px] sm:w-[150px]  md:w-[200px]  xl:w-[250px] overflow-hidden  cursor-pointer">
           {/* hover effect */}
           <div className="absolute top-0 bottom-0 left-0 right-0 bg-black/10 z-10 item-view cursor-pointer">
             <div className="w-full h-full flex items-center justify-center">
@@ -23,12 +23,12 @@ const Product = ({
 
           {/* discount yellow */}
           {discount > 0 && (
-            <div className="absolute top-1 left-2 aspect-square rounded-full z-[2] w-6 p-[0.1rem] flex justify-center items-center bg-yellow-400/80">
-              <p className="text-center text-black/60 md:text-sm text-xs">{discount}%</p>
+            <div className="absolute top-1 left-2 aspect-square rounded-full z-[2] w-fit p-[0.1rem] flex justify-center items-center bg-yellow-400/80">
+              <p className="text-center text-black/60 md:text-sm text-xs">-{discount}%</p>
             </div>
           )}
           {/* item content */}
-          <div className=" h-fit aspect-square w-[120px] sm:w-[150px] sm:h-[150px]  md:h-[200px] md:w-[200px] xl:h-[250px] xl:w-[250px] relative ">
+          <div className=" h-fit aspect-square  sm:h-[150px]  md:h-[200px] xl:h-[250px]  w-full relative ">
             <img
               src={image ? UrlFor(image[0]) : ""}
               className="w-[100%] h-[100%] mx-auto object-contain"
