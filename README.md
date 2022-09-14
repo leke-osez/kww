@@ -1,6 +1,6 @@
 # KingzWithWaves(KWW) - E-Commerce Web App
 
-![alt homePage](https://github.com/leke-osez/kww/tree/main/public/homePage1.png?raw=true)
+![alt homePage](https://github.com/leke-osez/kww/blob/main/public/homePage1.png?raw=true)
 
 ## DESCRIPTION
 This is a full-stack web application built with NEXTJS, TailwindCSS and Sanity.<br>
