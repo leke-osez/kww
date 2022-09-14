@@ -3,7 +3,7 @@
   <img src="public/homePage1.png"  height="350" title="hover text">
 </p>
 
-## SEE DEMO
+## SEE DEMO VIA THIS LINK
 https://kww-olive.vercel.app/
 
 ## DESCRIPTION
