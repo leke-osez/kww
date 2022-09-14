@@ -1,5 +1,8 @@
 # KingzWithWaves(KWW) - E-Commerce Web App
-
+<p align="center">
+  <img src="public/homePage1.png" width="350" title="hover text">
+  <img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text">
+</p>
 ![alt homePage](https://github.com/leke-osez/kww/blob/main/public/homePage1.png?raw=true)
 
 ## DESCRIPTION
