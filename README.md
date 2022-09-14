@@ -2,7 +2,9 @@
 <p align="center">
   <img src="public/homePage1.png"  height="350" title="hover text">
 </p>
-![alt homePage](https://github.com/leke-osez/kww/blob/main/public/homePage1.png?raw=true)
+
+## SEE DEMO
+https://kww-olive.vercel.app/
 
 ## DESCRIPTION
 This is a full-stack web application built with NEXTJS, TailwindCSS and Sanity.<br>
